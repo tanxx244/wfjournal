@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Transaction Verification {% endblock %}</h1>
+    
+        <table border="1">
+            <tr>
+                   <th>Date</th>
+                   <th>Name</th>
+                   <th>Invoice #</th>
+                   <th>Procedure</th>
+                   <th>Total</th>
+                   <th>Net Total</th>
+            </tr>
+            {% for detail in summary %}
+            <tr>
+                   <td>{{ detail['date'] }}</td>
+                   <td>{{ detail['name'] }}</td>
+                   <td>{{ detail['invoice'] }}</td>
+                   <td>{{ detail['procedure'] }}</td>
+                   <td>{{ detail['total'] }}</td>
+                   <td>{{ detail['nettotal'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+    <form method="post">
+        <label for="verify">Are these details above correct?</label>
+        <input type = "submit" name = "submit" value = "Yes">
+        <input type = "submit" name = "submit" value = "No">
+    </form>
+{% endblock %}

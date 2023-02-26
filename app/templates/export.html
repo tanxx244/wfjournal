@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Export Past Transactions' Report {% endblock %}</h1>
+    <form method="post">
+        <div class="new-entry">
+              <blockquote>
+                     <label for="startyear">Year of Start Date</label>
+                     <br>
+                     <input type="number" name="startyear"
+                            placeholder="startyear"
+                            value="2022"></input>
+               </blockquote>
+               
+               <blockquote>
+                     <label for="startmth">Month of Start Date</label>
+                     <br>
+                     <input min="1" max="12"
+                            type="number" name="startmth"
+                            placeholder="startmth"
+                            value="12"></input>
+               </blockquote>
+               
+               <blockquote>
+                     <label for="endyear">Year of End Date</label>
+                     <br>
+                     <input type="number" name="endyear"
+                            placeholder="endyear"
+                            value="2022"></input>
+               </blockquote>
+               
+               <blockquote>
+                     <label for="endmth">Month of End Date</label>
+                     <br>
+                     <input min="1" max="12"
+                            type="number" name="endmth"
+                            placeholder="endmth"
+                            value="12"></input>
+               </blockquote>
+
+               <blockquote>
+                     <label for="Export Path">Folder Path for Report Export</label>
+                     <br>
+                     <input size="40"
+                            type="text" name="exportpath"
+                            placeholder="exportpath"
+                            value="C:\Users\weifk\OneDrive\Desktop\output"></input>
+               </blockquote>
+        </div>
+
+        <button type="submit">Confirm</button>
+    </form>
+{% endblock %}

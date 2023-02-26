@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wei Fernn's Journal - {% block title %} {% endblock %}</title>
+    <style>
+        .message {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3;
+            line-height: 1
+        }
+        nav a {
+            color: #d64161;
+            font-size: 3em;
+            margin-left: 50px;
+            text-decoration: none;
+        }
+        
+        .alert {
+            padding: 20px;
+            margin: 5px;
+            color: #970020;
+            background-color: #ffd5de;
+        }
+    </style>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style/style2.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">Home</a>
+        <a href="{{ url_for('create') }}">Create</a>
+        <a href="{{ url_for('export') }}">Export Report</a>
+    </nav>
+	<h2>!!!Do Not Close The Command Prompt Window(With The Dark Background) Before Closing The Browser!!!</h2>
+    <hr>
+    <div class="content">
+        {% for message in get_flashed_messages() %}
+            <div class="alert">{{ message }}</div>
+        {% endfor %}
+        {% block content %} {% endblock %}
+    </div>
+</body>
+</html>

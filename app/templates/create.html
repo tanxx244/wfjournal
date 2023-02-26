@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Add a New Transaction {% endblock %}</h1>
+    <form method="post">
+       <div class = "new-entry">
+              <blockquote>
+              <label for="name">Name</label>
+              <br>
+              <input type="text" name="name"
+                     placeholder="name"
+                     value="{{ tempname }}"></input>
+              </blockquote>
+
+              <blockquote>
+              <label for="invoice">Invoice Number</label>
+              <br>
+              <input type="text" name="invoice"
+                     placeholder="invoice"
+                     value="{{ tempinv }}"></input>
+              </blockquote>
+
+              <blockquote>
+              <label for="procedure">Procedure</label>
+              <br>
+              <input type="text" name="procedure"
+                     placeholder="procedure"
+                     value="{{ temppro }}"></input>
+              </blockquote>
+
+              <blockquote>
+              <label for="chas">CHAS Amount (Enter Only Once If Same Invoice)</label>
+              <br>
+              <input type="number" name="chas"
+                     placeholder="chas"
+                     step = "any"
+                     value="0.0"></input>
+              </blockquote>
+
+              <blockquote>
+              <label for="cash">Cash Amount</label>
+              <br>
+              <input type="number" name="cash"
+                     placeholder="cash"
+                     step = "any"
+                     value="0.0"></input>
+              </blockquote>
+
+              <blockquote>
+              <label for="paynow">PayNow Amount</label>
+              <br>
+              <input type="number" name="paynow"
+                     placeholder="paynow"
+                     step = "any"
+                     value="0.0"></input>
+              </blockquote>
+
+              <blockquote>
+              <label for="nets">NETS Amount</label>
+              <br>
+              <input type="number" name="nets"
+                     placeholder="nets"
+                     step = "any"
+                     value="0.0"></input>
+              </blockquote>
+
+              <blockquote>
+              <label for="insurance">Insurance Amount (AIA/ IHP/ Allianz)</label>
+              <label>(Enter Only Once If Same Invoice)</label>
+              <br>
+              <input type="number" name="insurance"
+                     placeholder="insurance"
+                     step = "any"
+                     value="0.0"></input>
+              </blockquote>
+
+              <blockquote>
+              <label for="labmat">Lab Material Cost</label>
+              <br>
+              <input type="number" name="labmat"
+                     placeholder="labmat"
+                     step = "any"
+                     value="0.0"></input>
+              </blockquote>
+       </div>
+
+        <input type = "submit" name = "add" value = "Add Detail">
+
+        <table border="1">
+              <tr>
+                     <th>Date</th>
+                     <th>Name</th>
+                     <th>Invoice #</th>
+                     <th>Procedure</th>
+                     <th>Amount</th>
+                     <th>CHAS</th>
+                     <th>Cash</th>
+                     <th>PayNow</th>
+                     <th>NETS</th>
+                     <th>Insurance</th>
+                     <th>B/C</th>
+                     <th>Lab Material</th>
+                     <th>Total</th>
+                     <th>Net Total</th>
+              </tr>
+              {% for detail in details %}
+              <tr>
+                     <td>{{ detail['date'] }}</td>
+                     <td>{{ detail['name'] }}</td>
+                     <td>{{ detail['invoice'] }}</td>
+                     <td>{{ detail['procedure'] }}</td>
+                     <td>{{ detail['amount'] }}</td>
+                     <td>{{ detail['chas'] }}</td>
+                     <td>{{ detail['cash'] }}</td>
+                     <td>{{ detail['paynow'] }}</td>
+                     <td>{{ detail['nets'] }}</td>
+                     <td>{{ detail['insurance'] }}</td>
+                     <td>{{ detail['bc'] }}</td>
+                     <td>{{ detail['labmat'] }}</td>
+                     <td>{{ detail['total'] }}</td>
+                     <td>{{ detail['nettotal'] }}</td>
+              </tr>
+              {% endfor %}
+        </table>
+        
+        <input type = "submit" name = "remove" value = "Remove Last Detail">
+
+        <input type = "submit" name = "submit" value = "Submit">
+    </form>
+{% endblock %}

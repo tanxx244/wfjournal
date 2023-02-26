@@ -1,0 +1,10 @@
+Date,Name,Invoice Number,Procedure,Amount,CHAS Amount,Cash Amount,PayNow Amount,NETS Amount,Insurance Amount,B/C,Lab Material Cost,Total,Net Total
+2/1/2023,hihi,123,yoyo,50,0,50,0,0,0,0,0,50,20
+2/1/2023,hihi,123,titi,40,0,0,0,40,0,0.32,0,39.68,15.872
+2/1/2023,WFK,15000,EXLA,50,0,50,0,0,0,0,0,50,20
+2/1/2023,hihi,123,yoyo,0,20,0,0,0,0,0,0,0,0
+2/1/2023,hihi,123,titi,0,0,0,0,0,0,0,0,0,0
+2/1/2023,WFK,15000,EXLA,0,50.7,0,0,0,0,0,0,0,0
+2/1/2023,hihi,123,yoyo,0,0,0,0,0,100.1,0,0,0,0
+2/1/2023,hihi,123,titi,0,0,0,0,0,0,0,0,0,0
+2/1/2023,WFK,15000,EXLA,0,0,0,0,0,130.6,0,0,0,0
